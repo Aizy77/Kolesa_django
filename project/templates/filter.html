@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{% block content %}
+    <h2 class="text center">Search Results</h2>
+            <hr>
+        {% for product in products %}
+            <center>
+                <div class="ibm-fluid" style="width: 85%; padding-top: 40px; text-align: left; vertical-align: center;">
+                  <div class="ibm-col-12-6 ibm-col-medium-12-10 ibm-center-block">
+                    
+                    <a class="ibm-blocklink ibm-padding-content ibm-border-gray-20" href="{% url 'detail' product.id %}">
+                      <div class="ibm-mo">
+                        <table style="width:100%" class="the_table">
+                          <col width="10%">
+                          <col width="50%">
+                          <col width="20%">
+                          <col width="20%">
+                          <tr>
+                            <td>
+                              <div class="ibm-mo__image Rtable-cell"><img src="{{ product.image.url }}" alt="" height="165" width="240"></div>
+                            <td>
+                              <h2 class="ibm-bold ibm-h2 ibm-textcolor-blue-50 Rtable-cell Rtable-cell">{{x.name}}</h2>
+                              <p>{% if product.description|length < 150 %}
+                                  {{ product.description }}
+                                {% else %}
+                                  {{ product.description | slice:":150" }}
+                                {% endif %}...</p><br>
+                            </td>
+                            <td>
+                              <h1 class="ibm-h1 oversized ibm-fright ibm-textcolor-green-40">{{product.price|floatformat:2}}₸ </h1>
+                            </td>
+                            <td> <button class="card__btn add-to-cart ibm-btn-pri ibm-fright ibm-btn-blue-50" data-id="6">Add to Cart</button></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </a>
+                    <br/>
+                </div>
+              </center>
+        {% endfor %}
+{% endblock%}

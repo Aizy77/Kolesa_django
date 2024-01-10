@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+<form class="all" method="post">
+    {% csrf_token %}
+    <div class="cards">
+        <h4>Основное</h4>
+        <div class="card">
+            <span> Название </span><br>
+            <input type="text" id = "name" name="name"><br>
+            <span> Поколение </span><br>
+            <input type="text" id = "generation" name="generation"><br>
+            <span> Кузов </span><br>
+            <input type="text" id = "body" name="body"><br>
+            <span> Объем двигателя, л </span><br>
+            <input type="text" id = "EngCap" name="EngCap"><br>
+            <span> Коробка передач </span><br>
+            <input type="text" id = "transmission" name="transmission"><br>
+            <span> Привод </span><br>
+            <input type="text" id = "drive" name="drive"><br>
+        </div>
+    </div>
+
+    <div class="cards">
+        <h4> Цена, ₸ </h4>
+        <div class="card">
+            <input type="text" id = "price" name="price">
+        </div>
+    </div>
+
+    <div class="cards">
+        <h4> Дополнительная информация </h4>
+        <div class="card">
+            <span> Растаможен в Казахстане </span><br>
+            <input type="text" id = "customs_cleared" name="customs_cleared"><br>
+            <span> Руль </span><br>
+            <input type="text" id = "rudder" name="rudder"> <br>
+            <span> Пробег </span><br>
+            <input type="text" id = "run" name="run"><br>
+        </div>
+    </div>
+
+    <div class="cards">
+        <h4> Фотографии </h4>
+        <div class="card">
+            <span> Объявление с фотографиями получает в 5 раз больше откликов </span> <br>
+            <input type="file" id = "image" name="image">
+        </div>
+    </div>
+
+
+    <div class="cards">
+        <h4> Цвет кузова </h4>
+        <div class="card">
+            <input type="text" id="colour" name="colour">
+        </div>
+    </div>
+
+
+    <div class="cards">
+        <h4> Описание </h4>
+        <div class="card">
+            <input class="desc" value type="textarea" placeholder="Расскажите об автомобиле" maxlength="2100" id = "description" name="description">
+            <p> Не указывайте в описании цену, номера телефонов, e-mail и другие контактные данные </p>
+        </div>
+    </div>
+
+    <div>
+        <div class="cards">
+            <h4> Контакты </h4>
+            <div class="card">
+                <span> Город </span>
+                <br>
+                <input type="text" id= "city" name="city">
+                <br>
+                <span> Телефон </span>
+                <br>
+                <input type="text" id = "number" name="number">
+            </div>
+        </div>
+    </div>
+    <button class="btn" type = "submit" > Подать заявление </button>
+</form>
+<br><br><br>
+
+
+{% endblock content %}

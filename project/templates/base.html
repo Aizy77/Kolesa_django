@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Колёса </title>
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+  <link rel="shortcut icon" href="{% static 'images/favicon.jpg' %}" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+  <div class="head">
+    <div class="header">
+      <ul>
+        <li><a href="" class="bl"> Kolesa.kz </a></li>
+        <li><a href="" class="bl"> Krisha.kz </a></li>
+      </ul>
+      <ul class="right">
+        <li><a href=""> RU </a></li>
+        <li>{% if user.is_authenticated %}
+          <a href="{% url 'logout' %}"> Выйти </a>
+      {% else %}
+          <a href="{% url 'login' %}"> Войти </a>
+      {% endif %}</li>
+        <li><a href="{% url 'profile' %}"> Личный кабинет </a></li>
+      </ul>
+    </div>
+    <div class="second">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <div class="logo-image">
+                <img src="https://kolesa.kz/static/frontend/images/kolesa-logo-new.svg" width="162">
+          </div>
+        </a>
+      <div class="inline">
+        <ul>
+          <li><a href=""> Машины </a></li>
+          <li><a href=""> Авто от Kolesa.kz </a></li>
+          <li><a href=""> Новые авто </a></li>
+          <li><a href=""> Запчасти </a></li>
+          <li><a href=""> Ремонт и услуги </a></li>
+          <li><a href=""> Коммерческие </a></li>
+          <li><a href=""> Почитать </a></li>
+          <li><a href=""> Гид </a></li>
+        </ul>
+      </div>
+      <div>
+        <a href="{% url 'add' %}" class="butt">
+          <b><span class="plus"> + </span></b>
+          <span> Подать объявление </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  {% block content %}
+
+
+  {% endblock content %}
+
+  <footer>
+    <div class="foot">
+      <div class="log">
+        <img src="https://kolesa.kz/static/frontend/images/kolesa-logo-new.svg" width="100" alt="">
+      </div>
+      <div class="container">
+        <div class="column">
+          <ul>
+            <li><a href=""> О компании «Kolesa Group» </a></li>
+            <li><a href=""> Написать в Службу заботы </a></li>
+            <li><a href=""> Работа в «Kolesa Group» </a></li>
+            <li><a href=""> Карта сайта </a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li><a href=""> Рекламодателям </a></li>
+            <li><a href=""> Правила размещения объявлений </a></li>
+            <li><a href=""> Пользовательское соглашение </a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li><a href=""> Скачать приложение </a></li>
+            <li><a href=""> Мобильная версия сайта </a></li>
+          </ul>
+        </div>
+        <div class="icon">
+          Следите за нашими новостями
+          <ul>
+            <li><a href=""> <img src="static/images/instagram.jpg" alt="" class="social-links__icon"> </a></li>
+            <li><a href=""> <img src="youtube.png" alt="" class="social-links__icon"> </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="last">
+        © 2006 — 2023 АО Колеса 
+      </div>
+
+    </div>
+  </footer>
+</body>
+</html>

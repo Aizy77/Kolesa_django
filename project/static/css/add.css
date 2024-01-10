@@ -1,0 +1,66 @@
+.inp .subtitle {
+    padding: 0;
+    margin: 0 0 16px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+}
+.inp {
+    font-family: Open Sans,Arial,Helvetica,sans-serif;
+}
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.desc{
+    border-color: rgba(28,24,25,.3);
+    min-height: 214px;
+    max-width: 642px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    height: auto;
+    resize: vertical;
+    font-size: 14px!important;
+    display: block;
+    width: 100%;
+    line-height: 24px;
+    font-weight: 400;
+    border: 1px solid rgba(28,24,25,.2);
+    border-radius: 4px;
+    appearance: none;
+    height: 36px;
+    padding: 0 8px;
+    overflow: auto;
+}
+.card{
+    border-left: 5px solid;
+    border-color: #2a81dd;
+    padding-left: 15px;
+    line-height: 25px;
+}
+.cards{
+    padding-left: 36px;
+}
+
+.all{
+    display: grid;
+    padding-left: 36px;
+}
+.card input{
+    min-width: 328px;
+    min-height: 24px;
+}
+.btn{
+    margin-top: 30px;
+    margin-left: 5%;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: aliceblue;
+    background-color: #1393e9;
+}
